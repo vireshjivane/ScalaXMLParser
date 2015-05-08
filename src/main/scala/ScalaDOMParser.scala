@@ -36,10 +36,10 @@ def parser(doc : Document) : Unit = {
 			var counter = 0
 
             //The NodeList can be converted to an Iterable collection. For the time being I have used simple for.
-						for (counter <- 0 to nodes.getLength-1) 
-						{
-							leafHandler(nodes.item(counter));
-						}
+			for (counter <- 0 to nodes.getLength-1) 
+			{
+				leafHandler(nodes.item(counter));
+			}
 	}   
   
  /***********************************************************/
