@@ -53,7 +53,6 @@ object ScalaXMLParser extends App{
     }
 
   def displayParsedElements(): Unit = {
-
     (keys, values).zipped foreach { (key, value) => println("key : %s \t\t value : %s".format(key, value)) }
   }
 }
