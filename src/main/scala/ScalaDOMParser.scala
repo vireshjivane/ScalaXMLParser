@@ -79,7 +79,6 @@ def parser(doc : Document) : Unit = {
 
 }
 
-
 /***********************************************************/
 
 /* Output for reference */
