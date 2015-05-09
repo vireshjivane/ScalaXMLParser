@@ -8,14 +8,14 @@ object ScalaDOMParserWithXPathBuilder extends App {
 /***********************************************************/
 
 	val domFactory = DocumentBuilderFactory.newInstance()
-			domFactory.setNamespaceAware(true);
+			 domFactory.setNamespaceAware(true);
 
 	val builder = domFactory.newDocumentBuilder()
 	val doc = builder.parse("input.xml")
 
 /***********************************************************/
 
-			parser(doc)
+	parser(doc)
 
 /***********************************************************/
 
@@ -26,16 +26,16 @@ object ScalaDOMParserWithXPathBuilder extends App {
 
 def parser(doc: Document): Unit = {
 
-		val xpath = XPathFactory.newInstance().newXPath()
-		val expr = xpath.compile("//*[not(*)]") // This XPath Expression will fetch all the leaf nodes
-		val result = expr.evaluate(doc, XPathConstants.NODESET)
+	val xpath = XPathFactory.newInstance().newXPath()
+	val expr = xpath.compile("//*[not(*)]") // This XPath Expression will fetch all the leaf nodes
+	val result = expr.evaluate(doc, XPathConstants.NODESET)
 
   	val nodes = result.asInstanceOf[NodeList]
 
-		var counter = 0
+	var counter = 0
 
-				//The NodeList can be converted to an Iterable collection. For the time being I have used simple for.
-				for (counter <- 0 to nodes.getLength - 1) {
+		/The NodeList can be converted to an Iterable collection. For the time being I have used simple for.
+		for (counter <- 0 to nodes.getLength - 1) {
 		
           getPathWithXPath(nodes.item(counter));
 				
@@ -54,17 +54,19 @@ def parser(doc: Document): Unit = {
 	def getPathWithXPath(node: Node): Unit = {
 
     val xpath = XPathFactory.newInstance().newXPath()
-		val expr = xpath.compile("ancestor::*") // This XPath Expression will fetch all the leaf nodes
-		val result = expr.evaluate(node, XPathConstants.NODESET)
+	
+	val expr = xpath.compile("ancestor::*") // This XPath Expression will fetch all the leaf nodes
+	val result = expr.evaluate(node, XPathConstants.NODESET)
 
-		val nodes = result.asInstanceOf[NodeList]
+	val nodes = result.asInstanceOf[NodeList]
 
-		val path = new StringBuilder()
-		val value = node.getTextContent
+	val path = new StringBuilder()
+	val value = node.getTextContent
 
-		var counter: Int = 0
+	var counter: Int = 0
 
 		for (counter <- 0 to nodes.getLength - 1) {
+		
 			path.append(nodes.item(counter).getNodeName + "/")
 		}
 
@@ -102,6 +104,3 @@ data/editors/editor/telephone => 7356
 */
 
 /*******************************************************************/
-
-
-
