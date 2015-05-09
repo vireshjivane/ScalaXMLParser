@@ -76,3 +76,32 @@ def parser(doc: Document): Unit = {
 	/***********************************************************/
 
 }
+
+/*******************************************************************/
+
+/* Output for reference */
+
+/*
+
+data/authors/author/name => Robert Roberts
+data/authors/author/address => 10 Tenth St, Decapolis
+data/authors/author/editor => Ella Ellis
+data/authors/author/ms => ftp://docs/rr-10
+data/authors/author/born => 1960/05/26
+data/authors/author/name => Tom Thomas
+data/authors/author/address => 2 Second Av, Duo-Duo
+data/authors/author/editor => Ella Ellis
+data/authors/author/ms => ftp://docs/tt-2
+data/authors/author/name => Mark Marks
+data/authors/author/address => 1 Premier, Maintown
+data/authors/author/editor => Ella Ellis
+data/authors/author/ms => ftp://docs/mm-1
+data/editors/editor/name => Ella Ellis
+data/editors/editor/telephone => 7356
+
+*/
+
+/*******************************************************************/
+
+
+
